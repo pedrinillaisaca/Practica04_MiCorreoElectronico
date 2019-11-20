@@ -39,6 +39,11 @@
 
                     echo "   <td> <a href='eliminarReunion.php?codigo=" . $row['r_codigo'] . "'>Eliminar Reunion</a> </td>"; 
                     
+
+
+
+
+                    
                  
                     echo "</tr>"; 
                 } 
