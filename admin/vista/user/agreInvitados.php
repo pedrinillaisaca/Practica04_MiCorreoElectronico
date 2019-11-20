@@ -3,7 +3,7 @@
     if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
         header("Location: ../../../public/vista/login.html");
     }
-?>
+?> 
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -12,13 +12,10 @@
     <link rel="stylesheet" href="../../../css/formulario.css"> 
 </head> 
 <body> 
- <h1>Bienvenido Administrador </h1>
+ <h1>Seleciona la reunion para agregar invitados</h1>
 
- <h2><a href="">Eliminar Reuniones</a></h2>
- <h2><a href="">Buscar Reuniones</a></h2>
- <h2><a href="">Modificar datos</a></h2>
- <h2><a href="">Cambiar contraseña</a></h2>
- <h2><a href="../../../public/vista/login.html">Cerrar Sesion</a></h2>
+
+ <h2><a href="crearReunion.php">Regresar</a></h2>
  <table style="width:100%" class="tabla"> 
         <tr> 
             
@@ -26,7 +23,7 @@
             <th>Hora</th> 
             <th>Lugar</th> 
             <th>Coordenadas</th> <!--FALTA-->             
-                         
+            <th>Invitar</th>              
         </tr> 
         <?php 
             include '../../../config/conexionDB.php';  
@@ -41,9 +38,7 @@
                     echo "   <td>" . $row['r_hora'] ."</td>"; 
                     echo "   <td>" . $row['r_lugar'] . "</td>"; 
                     echo "   <td>" . $row['r_coordenadas'] . "</td>"; 
-
-                    echo "   <td> <a href='eliminarReunion.php?codigo=" . $row['r_codigo'] . "'>Eliminar Reunion</a> </td>";  
-                 
+                    echo "   <td> <a href='agreInvitados2.php?r_codigo=" . $row['r_codigo'] . "'>Invitar</a> </td>";
                     echo "</tr>"; 
                 } 
             } else { 

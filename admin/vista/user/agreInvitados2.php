@@ -3,7 +3,7 @@
     if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
         header("Location: ../../../public/vista/login.html");
     }
-?>
+?> 
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -12,38 +12,36 @@
     <link rel="stylesheet" href="../../../css/formulario.css"> 
 </head> 
 <body> 
- <h1>Bienvenido Administrador </h1>
+ <h1>Seleciona los invitados</h1>
 
- <h2><a href="">Eliminar Reuniones</a></h2>
- <h2><a href="">Buscar Reuniones</a></h2>
- <h2><a href="">Modificar datos</a></h2>
- <h2><a href="">Cambiar contraseña</a></h2>
- <h2><a href="../../../public/vista/login.html">Cerrar Sesion</a></h2>
+
+ <h2><a href="crearReunion.php">Regresar</a></h2>
  <table style="width:100%" class="tabla"> 
         <tr> 
             
-            <th>Fecha</th>  
-            <th>Hora</th> 
-            <th>Lugar</th> 
-            <th>Coordenadas</th> <!--FALTA-->             
+            <th>Nombre</th>  
+            <th>Apellido</th> 
+            <th>Correo</th> 
+            <th>Invitar</th> <!--FALTA-->             
                          
         </tr> 
-        <?php 
+        <?php
+            //AQUI ESTOY ENVIANDO AL UUSARIO 
+            $codigo_reunion=$_GET["r_codigo"];
             include '../../../config/conexionDB.php';  
-            $sql = "SELECT * FROM reunion"; 
+           
+           
+            $sql = "SELECT * FROM usuario WHERE u_rol='U'"; 
             $result = $conn->query($sql); 
              
             if ($result->num_rows > 0) { 
                  
                 while($row = $result->fetch_assoc()) { 
                     echo "<tr>"; 
-                    echo "   <td>" . $row["r_fecha"] . "</td>"; 
-                    echo "   <td>" . $row['r_hora'] ."</td>"; 
-                    echo "   <td>" . $row['r_lugar'] . "</td>"; 
-                    echo "   <td>" . $row['r_coordenadas'] . "</td>"; 
-
-                    echo "   <td> <a href='eliminarReunion.php?codigo=" . $row['r_codigo'] . "'>Eliminar Reunion</a> </td>";  
-                 
+                    echo "   <td>" . $row["u_nombre"] . "</td>"; 
+                    echo "   <td>" . $row['u_apellido'] ."</td>"; 
+                    echo "   <td>" . $row['u_correo'] . "</td>";                     
+                    echo "   <td> <a href='../../controladores/user/reg_re_usu.php?u_codigo=".$row['u_codigo']."&r_codigo=".$codigo_reunion."'>Invitar</a> </td>"; //?r_codigo=".$codigo_reunion." 
                     echo "</tr>"; 
                 } 
             } else { 

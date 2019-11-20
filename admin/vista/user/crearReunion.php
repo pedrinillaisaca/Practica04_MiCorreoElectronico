@@ -10,22 +10,14 @@
 <head>
     <meta charset="utf-8">
     <title>Crear Reunion</title>
-    <link rel="stylesheet" href="../../css/formulario.css">
-    <!--
-    <script src="funciones.js" type="text/javascript"></script>-->
-
+    <link rel="stylesheet" href="../../../css/formulario.css">    
 </head>
 
 
 <section class="formulas">
-    <h2>Formulario de Reunion</h2>
-    <form id="formulario01" method="POST" action="../controladores/crear_usuario.php" > 
-
-        <!--    
-        <div><label for="cedula">Cedula:</label>
-            <input type="text" id="ced" name="cedula" value="" placeholder="" onkeyup="return validarCedula()" />
-            <span id="mensajeCedula" class="error"></span>
-        </div>-->
+    <h2>Crear Reunion</h2>
+    
+    <form id="formulario01" method="POST" action="../../controladores/user/crearNewReunion.php" > 
 
         <div><label for="fecha">Fecha:</label>
             <input type="text" id="fecha" name="fecha" placeholder="yyyy/mm/dd" />
@@ -42,12 +34,6 @@
             <label for="lugar">Lugar:</label>
             <input type="text" id="lugar" name="lugar" /></div>
             
-            
-        <div>
-            <label for="tel">Telefono:</label>
-            <input type="text" id="tel"  name="telefono"/>
-            <span id="mensajeTelefono" class="error"></span>
-        </div>
 
         <div>
             <label for="coordenadas">Coordenadas:</label>
@@ -73,7 +59,9 @@
         </div>
 
     </form>
-    <h2><a href="login.html">Iniciar Sesion</a></h2> <!--PENDIENTE-->
+    <h2><a href="../../vista/user/index.php">Regresar</a></h2>
+    <h2><a href="agreInvitados.php">Agregar Invitados</a></h2>
+   
 </section>
 
 </html>
