@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+        header("Location: ../../../public/vista/login.html");
+    }
+?> 
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -12,6 +18,7 @@
  <h2><a href="">Buscar Reuniones</a></h2>
  <h2><a href="">Modificar datos</a></h2>
  <h2><a href="">Cambiar contraseña</a></h2>
+ <h2><a href="../../controladores/cerrarSesion.php">Cerrar Sesion</a></h2>
  <table style="width:100%" class="tabla"> 
         <tr> 
             
