@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../../css/formulario.css">
+</head>
+
+<body>
+    <h2>Login</h2>
+    <form id="formulario" method="POST" action="../controladores/login.php">
+        <div>
+            <label for="correo">Correo electrónico </label>
+            <input type="text" id="correo" name="correo" value="" placeholder="Ingrese el correo ..." />
+        </div>
+        <div>
+            <label for="nombres">Constraseña </label>
+            <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su 
+contraseña ..." />
+        </div>
+        <div>
+            <input type="submit" id="login" name="login" value="Iniciar Sesión" />
+        </div>
+    </form>
+    <h2><a href="registrarse.html">Registrarse</a></h2>
+</body>
+
+</html>

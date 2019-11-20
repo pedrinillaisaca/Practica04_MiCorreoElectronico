@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../../css/formulario.css">
+    <!--
+    <script src="funciones.js" type="text/javascript"></script>-->
+
+</head>
+
+
+<section class="formulas">
+    <h2>Formulario de Registro</h2>
+    <form id="formulario01" method="POST" action="../controladores/crear_usuario.php" > 
+
+        <!--
+
+            
+        <div><label for="cedula">Cedula:</label>
+            <input type="text" id="ced" name="cedula" value="" placeholder="" onkeyup="return validarCedula()" />
+            <span id="mensajeCedula" class="error"></span>
+        </div>-->
+
+        <div><label for="nombre">Nombres:</label>
+            <input type="text" id="name" name="nombres" onkeyup="return validarNombres(this)" />
+            <span id="mensajeNombre" class="error"></span>
+        </div>
+
+
+        <div> <label for="ape">Apellidos:</label>
+            <input type="text" id="ape" name="apellidos" onkeyup="return validarApellido(this)" />
+            <span id="mensajeApellido" class="error"></span>
+        </div>
+
+        <div>
+            <label for="dir">Dirección:</label>
+            <input type="text" id="dir" name="direccion" /></div>
+            
+            
+        <div>
+            <label for="tel">Telefono:</label>
+            <input type="text" id="tel"  name="telefono"  onkeyup="return valTelefono(this)"/>
+            <span id="mensajeTelefono" class="error"></span>
+        </div>
+
+        <div>
+            <label for="FechaNac">Fecha Nacimieto:</label>
+            <input type="text" id="FechaNac"  name="fechaNacimiento"  placeholder="yyyy/mm/dd"/>
+            <span id="mensajeFechaNac" class="error"></span>
+        </div>
+
+        <div>
+            <label for="mail">E-mail:</label>
+            <input type="text" id="mail" name="correo" />
+            <span id="mensajeMail" class="error"></span>
+        </div>
+
+        <div>
+            <label for="pass">Contraseña:</label>
+            <input type="password" id="pass" name="contrasena" />
+            <span id="mensajePass" class="error"></span>
+        </div>
+        <div>
+            <input type="submit" value="Registrar" id="Registrar"></input>
+            <!--
+            <input type="submit" value="Validar" onclick="validar()"></input>-->
+        </div>
+
+    </form>
+    <h2><a href="login.html">Iniciar Sesion</a></h2> <!--PENDIENTE-->
+</section>
+
+</html>
