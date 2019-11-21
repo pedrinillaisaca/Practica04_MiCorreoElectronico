@@ -17,7 +17,7 @@
 </head> 
 <body> 
  
-    <?php         
+    <?php
         
         $condigo_usuario=$_GET["u_codigo"];
         $condigo_reunion=$_GET["r_codigo"];
