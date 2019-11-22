@@ -39,7 +39,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
 
 
         <div>
-            <input type="submit" value="Cambiar" id="Registrar"></input>    
+            <input type="submit" value="Cambiar" id="Cambiar"></input>    
         </div>
 
     </form>

@@ -30,8 +30,10 @@ function invitar(num,u_codigo,r_codigo) {
 
 
 function buscarReunion() { 
- 
+    
     var motivo = document.getElementById("motivo").value; 
+    var u_codigo= document.getElementById("u_codigo").value;
+    console.log(u_codigo)
     if (motivo == "") { 
         document.getElementById("motivo").innerHTML = "";         
     } else {  
@@ -48,7 +50,7 @@ function buscarReunion() {
                 document.getElementById("informacion").innerHTML = this.responseText; 
             } 
         }; 
-        xmlhttp.open("GET","../../controladores/user/buscarReuniones.php?motivo="+motivo,true); 
+        xmlhttp.open("GET","../../controladores/user/buscarReuniones.php?motivo="+motivo+"&u_codigo="+u_codigo,true); 
         xmlhttp.send(); 
     } 
     return false; 

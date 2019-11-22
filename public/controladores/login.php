@@ -13,13 +13,16 @@
     $result = $conn->query($sql);
     $fila=$result->fetch_assoc();//obteniendo los resultados de la consulta     
     if ($result->num_rows > 0) {         
-        $_SESSION['isLogged'] = TRUE;//sesion iniciada 
+        $_SESSION['isLogged'] = TRUE;//sesion iniciada
 
+        $u_codigo=$fila['u_codigo'];
+        $u_nombre=$fila['u_nombre'];
+        
         if($fila['u_rol']=='U'){//ES UN USUARIO
-            $u_codigo=$fila['u_codigo'];
-            header("Location: ../../admin/vista/user/index.php?u_codigo=$u_codigo");            
+            
+            header("Location: ../../admin/vista/user/index.php?u_codigo=$u_codigo&u_nombre=$u_nombre");   
         }else{//ES ADministrador
-            header("Location: ../../admin/vista/admin/index.php");
+            header("Location: ../../admin/vista/admin/index.php?u_codigo=$u_codigo&u_nombre=$u_nombre");
         }
         
        

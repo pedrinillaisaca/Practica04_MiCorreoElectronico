@@ -8,24 +8,45 @@
 <html> 
 <head> 
     <meta charset="UTF-8"> 
-    <title>Usuario</title>
+    <title>Administrador</title>
     <link rel="stylesheet" href="../../../css/formulario.css"> 
 </head> 
 <body> 
- <h1>Bienvenido Administrador </h1>
 
- <h2><a href="">Eliminar Reuniones</a></h2>
- <h2><a href="">Buscar Reuniones</a></h2>
- <h2><a href="">Modificar datos</a></h2>
- <h2><a href="">Cambiar contraseña</a></h2>
- <h2><a href="../../../public/vista/login.html">Cerrar Sesion</a></h2>
+<?php 
+
+$u_codigo=$_GET["u_codigo"];
+$u_nombre=$_GET["u_nombre"];
+
+//echo"<p>".$u_codigo."</p>";
+
+
+ echo "<h1>Administrador: ".$u_nombre."</h1>";
+ //envio a cada pagina su respectivo id de usuario para realizar los cambios pertinentes
+ //echo "<h2><a href='crearReunion.php?u_codigo=".$u_codigo."'>Crear Reuniones</a></h2>";
+ //echo "<h2><a href='buscarReuniones.php?u_codigo=".$u_codigo."'>Buscar Reuniones</a></h2>";
+ //echo "<h2><a href='modificar_user2.php?u_codigo=".$u_codigo."'>Modificar datos</a></h2>";
+ //echo "<h2><a href='cambiar_contra_usuario.php?u_codigo=".$u_codigo."'>Cambiar contraseña</a></h2>";
+ //echo "<h2><a href=''>Eliminar Reuniones</a></h2>";
+ //echo "<h2><a href=''>Buscar Reuniones</a></h2>";
+ //echo "<h2><a href=''>Modificar datos</a></h2>";
+ echo "<h2><a href='cam_contra_user.php'>Cambiar contraseña de Usuarios</a></h2>";
+
+
+ echo "<h2><a href='../../controladores/cerrarSesion.php'>Cerrar Sesion</a></h2>";
+ 
+ ?>
+
  <table style="width:100%" class="tabla"> 
         <tr> 
             
             <th>Fecha</th>  
             <th>Hora</th> 
             <th>Lugar</th> 
-            <th>Coordenadas</th> <!--FALTA-->             
+            <th>Coordenadas</th>
+            <th>Motivo</th>
+            <th>Eliminar</th>
+            
                          
         </tr> 
         <?php 
@@ -43,8 +64,9 @@
                     echo "   <td>" . $row['r_hora'] ."</td>"; 
                     echo "   <td>" . $row['r_lugar'] . "</td>"; 
                     echo "   <td>" . $row['r_coordenadas'] . "</td>"; 
+                    echo "   <td>" . $row['r_motivo'] . "</td>"; 
 
-                    echo "   <td> <a href='eliminarReunion.php?codigo=" . $row['r_codigo'] . "'>Eliminar Reunion</a> </td>";  
+                    echo "   <td> <a href='borrarReunion.php?r_codigo=" . $row['r_codigo'] . "'>Eliminar Reunion</a> </td>";  
                  
                     echo "</tr>"; 
                 } 

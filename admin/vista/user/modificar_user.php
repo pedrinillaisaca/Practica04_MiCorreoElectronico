@@ -25,7 +25,7 @@
                          
         </tr> 
         <?php
-            //AQUI ESTOY ENVIANDO AL UUSARIO 
+            //AQUI listo a todos los usuarios para luego proceder a elimimar a los mismos
             //$codigo_reunion=$_GET["r_codigo"];
             include '../../../config/conexionDB.php';             
            

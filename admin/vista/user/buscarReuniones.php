@@ -13,7 +13,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
     <link rel="stylesheet" href="../../../css/formulario.css">
     <script src="main.js" type="text/javascript"></script>
 </head>
-<?php //$u_codigo=$_GET["u_codigo"]; echo "<p>".$u_codigo."</p>";  ?>
+<?php $u_codigo=$_GET["u_codigo"]; echo "<p>".$u_codigo."</p>";  ?>
 
 
 <section class="formulas">
@@ -22,6 +22,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
     <form id="formulario01" method="POST" action="">
        
         <div>
+            <input type="hidden" id="u_codigo" value="<?php echo $_GET["u_codigo"];?>">
             <label for="motivo">Motivo:</label>
             <!-- <input type="text" id="motivo" name="motivo" />-->
 
@@ -37,7 +38,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
         </div>
       
         <div>
-        <input type="button" id="buscar" name="buscar" value="Buscar" onclick="buscarReunion()">            
+        <input type="button" id="buscar" name="buscar" value="Buscar" onclick="return buscarReunion()">            
         </div>
 
     </form>

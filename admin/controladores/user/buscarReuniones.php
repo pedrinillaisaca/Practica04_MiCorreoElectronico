@@ -3,12 +3,15 @@
 include '../../../config/conexionDB.php';
 
 $motivo =  mb_strtoupper($_GET['motivo']);
+$u_codigo=$_GET['u_codigo'];
 //echo "<p>".$motivo."</p>";   
+//echo "<p>".$u_codigo."</p>";   
 
-$sql = "SELECT * FROM reunion WHERE r_eliminada='N' AND r_motivo='$motivo'";
+$sql = "SELECT * FROM reunion WHERE r_eliminada='N' AND r_motivo='$motivo' AND r_remitente='$u_codigo'";
 //cambiar la consulta para puede buscar por ocurrencias de letras 
 $result = $conn->query($sql);
-echo "    <table style='width:100%' class='tabla'> 
+echo  "<table style='width:100%' class='tabla'> 
+            
         <tr> 
                      
             <th>Fecha</th>  
