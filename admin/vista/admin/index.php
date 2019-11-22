@@ -30,7 +30,9 @@
         </tr> 
         <?php 
             include '../../../config/conexionDB.php';  
-            $sql = "SELECT * FROM reunion"; 
+            //lisa reuniones no eliminadas ordenadas desde las mas recientes ajendadas por el usuario que en
+            //este momento esta como logeado
+            $sql = "SELECT * FROM reunion WHERE r_eliminada='N' ORDER BY r_codigo DESC"; 
             $result = $conn->query($sql); 
              
             if ($result->num_rows > 0) { 

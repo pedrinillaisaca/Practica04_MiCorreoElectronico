@@ -26,7 +26,7 @@ echo"<p>".$u_codigo."</p>";
  <?php
  
  echo "<h2><a href='crearReunion.php?u_codigo=".$u_codigo."'>Crear Reuniones</a></h2>";
- //echo "<h2><a href="">Buscar Reuniones</a></h2>";
+ echo "<h2><a href='buscarReuniones.php'>Buscar Reuniones</a></h2>";
  echo "<h2><a href='modificar_user.php'>Modificar datos</a></h2>";
  echo "<h2><a href='cambiar_contra_usuario.php?u_codigo=".$u_codigo."'>Cambiar contraseña</a></h2>";
  echo "<h2><a href='../../controladores/cerrarSesion.php'>Cerrar Sesion</a></h2>";
@@ -39,12 +39,13 @@ echo"<p>".$u_codigo."</p>";
             <th>Fecha</th>  
             <th>Hora</th> 
             <th>Lugar</th> 
-            <th>Coordenadas</th> <!--FALTA-->             
+            <th>Coordenadas</th>
+            <th>Motivo</th>        
                          
         </tr> 
         <?php 
             include '../../../config/conexionDB.php';  
-            $sql = "SELECT * FROM reunion"; 
+            $sql = "SELECT * FROM reunion WHERE r_eliminada='N' ORDER BY r_codigo DESC"; 
             $result = $conn->query($sql); 
              
             if ($result->num_rows > 0) { 
@@ -55,6 +56,7 @@ echo"<p>".$u_codigo."</p>";
                     echo "   <td>" . $row['r_hora'] ."</td>"; 
                     echo "   <td>" . $row['r_lugar'] . "</td>"; 
                     echo "   <td>" . $row['r_coordenadas'] . "</td>"; 
+                    echo "   <td>" . $row['r_motivo'] . "</td>"; 
                     echo "</tr>"; 
                 } 
             } else { 

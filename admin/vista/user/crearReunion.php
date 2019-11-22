@@ -50,12 +50,12 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
             <!-- <input type="text" id="motivo" name="motivo" />-->
 
             <select name="motivo" id="motivo">
-                <option value="Planificaión">Actualización de estado</option>
-                <option value="Actualización">Compartir Información</option>
-                <option value="Decisión">Toma de Decisiones</option>
-                <option value="Resolución">Resolución de Problemas</option>
-                <option value="Resolución"> Innovación</option>
-                <option value="Resolución">Creación de Equipos</option>
+                <option value="Actualización de estado">Actualización de estado</option>
+                <option value="Compartir Información">Compartir Información</option>
+                <option value="Toma de Decisiones">Toma de Decisiones</option>
+                <option value="Resolución de Problemas">Resolución de Problemas</option>
+                <option value="Innovación"> Innovación</option>
+                <option value="Creación de Equipos">Creación de Equipos</option>
                 
             </select>
         </div>
