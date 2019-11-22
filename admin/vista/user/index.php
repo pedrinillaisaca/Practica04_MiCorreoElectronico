@@ -12,13 +12,27 @@
     <link rel="stylesheet" href="../../../css/formulario.css"> 
 </head> 
 <body> 
+<?php 
+
+$u_codigo=$_GET["u_codigo"];
+
+echo"<p>".$u_codigo."</p>";
+
+
+?>
+
  <h1>Bienvenido Usuario </h1>
 
- <h2><a href="crearReunion.php">Crear Reuniones</a></h2>
- <h2><a href="">Buscar Reuniones</a></h2>
- <h2><a href="modificar_user.php">Modificar datos</a></h2>
- <h2><a href="cam_contra_user.php">Cambiar contraseña</a></h2>
- <h2><a href="../../controladores/cerrarSesion.php">Cerrar Sesion</a></h2>
+ <?php
+ 
+ echo "<h2><a href='crearReunion.php?u_codigo=".$u_codigo."'>Crear Reuniones</a></h2>";
+ //echo "<h2><a href="">Buscar Reuniones</a></h2>";
+ echo "<h2><a href='modificar_user.php'>Modificar datos</a></h2>";
+ echo "<h2><a href='cambiar_contra_usuario.php?u_codigo=".$u_codigo."'>Cambiar contraseña</a></h2>";
+ echo "<h2><a href='../../controladores/cerrarSesion.php'>Cerrar Sesion</a></h2>";
+ 
+ ?>
+ 
  <table style="width:100%" class="tabla"> 
         <tr> 
             

@@ -17,10 +17,12 @@
 </head> 
 <body> 
  
-    <?php         
-        
+    <?php   
+
+        $u_codigo= $_POST["codigo"];
         include '../../../config/conexionDB.php';                 
- 
+  
+
         $fecha = isset($_POST["fecha"]) ? trim($_POST["fecha"]) : null; 
         $hora = isset($_POST["hora"]) ? mb_strtoupper(trim($_POST["hora"]), 'UTF-8') : null; 
         $lugar = isset($_POST["lugar"]) ? mb_strtoupper(trim($_POST["lugar"]), 'UTF-8') : null; 
@@ -29,7 +31,7 @@
         $observacion = isset($_POST["observacion"]) ?  mb_strtoupper(trim($_POST["observacion"]),'UTF-8') : null;        
                 
         $sql = "INSERT INTO reunion VALUES (0, 'N', '$fecha', '$hora', '$lugar', '$coordenadas', 
-        '$motivo','$observacion')";       
+        '$motivo','$observacion',$u_codigo,null)";       
  
         if ($conn->query($sql) === TRUE) { 
             echo "<p>Se ha creado correctamemte!!!</p>";      
@@ -43,7 +45,7 @@
          
         //cerrar la base de datos 
         $conn->close(); 
-        header("Location: ../../vista/user/crearReunion.php");
+        header("Location: ../../vista/user/agreInvitados2.php");//redirecciono a la pagina para adicionar a los invitados
        
                    
     ?> 

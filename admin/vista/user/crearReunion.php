@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-        header("Location: ../../../public/vista/login.html");
-    }
+session_start();
+if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
+    header("Location: ../../../public/vista/login.html");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,14 +10,18 @@
 <head>
     <meta charset="utf-8">
     <title>Crear Reunion</title>
-    <link rel="stylesheet" href="../../../css/formulario.css">    
+    <link rel="stylesheet" href="../../../css/formulario.css">
 </head>
-
+<?php $u_codigo=$_GET["u_codigo"]; echo "<p>".$u_codigo."</p>";  ?>
 
 <section class="formulas">
     <h2>Crear Reunion</h2>
+
+    <form id="formulario01" method="POST" action="../../controladores/user/crearNewReunion.php">
+
+
     
-    <form id="formulario01" method="POST" action="../../controladores/user/crearNewReunion.php" > 
+    <input type="hidden" id="codigo" name="codigo" value="<?php echo $_GET["u_codigo"];?>" />
 
         <div><label for="fecha">Fecha:</label>
             <input type="text" id="fecha" name="fecha" placeholder="yyyy/mm/dd" />
@@ -26,25 +30,34 @@
 
 
         <div> <label for="hora">Hora:</label>
-            <input type="text" id="hora" name="hora"  />
+            <input type="text" id="hora" name="hora" />
             <span id="mensajeApellido" class="error"></span>
         </div>
 
         <div>
             <label for="lugar">Lugar:</label>
             <input type="text" id="lugar" name="lugar" /></div>
-            
+
 
         <div>
             <label for="coordenadas">Coordenadas:</label>
-            <input type="text" id="coordenadas"  name="coordenadas"  />
+            <input type="text" id="coordenadas" name="coordenadas" />
             <span id="mensajeFechaNac" class="error"></span>
         </div>
 
         <div>
             <label for="motivo">Motivo:</label>
-            <input type="text" id="motivo" name="motivo" />
-            <span id="mensajeMail" class="error"></span>
+            <!-- <input type="text" id="motivo" name="motivo" />-->
+
+            <select name="motivo" id="motivo">
+                <option value="Planificaión">Actualización de estado</option>
+                <option value="Actualización">Compartir Información</option>
+                <option value="Decisión">Toma de Decisiones</option>
+                <option value="Resolución">Resolución de Problemas</option>
+                <option value="Resolución"> Innovación</option>
+                <option value="Resolución">Creación de Equipos</option>
+                
+            </select>
         </div>
 
         <div>
@@ -61,7 +74,7 @@
     </form>
     <h2><a href="../../vista/user/index.php">Regresar</a></h2>
     <h2><a href="agreInvitados.php">Agregar Invitados</a></h2>
-   
+
 </section>
 
 </html>

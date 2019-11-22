@@ -40,7 +40,9 @@
                     echo "   <td>" . $row['r_lugar'] . "</td>"; 
                     echo "   <td>" . $row['r_coordenadas'] . "</td>";
                     echo "   <td>" . $row['r_motivo'] . "</td>"; 
-                    echo "   <td> <a href='agreInvitados2.php?r_codigo=" . $row['r_codigo'] . "'>Invitar</a> </td>";
+                    //echo "   <td> <a href='agreInvitados2.php?r_codigo=" . $row['r_codigo'] . "'>Invitar</a> </td>";
+
+                    
                     echo "</tr>"; 
                 } 
             } else { 

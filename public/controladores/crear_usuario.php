@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-        header("Location: ../../../public/vista/login.html");
-    }
-?>
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -36,7 +30,7 @@
  
         if ($conn->query($sql) === TRUE) { 
             echo "<p>El usuario se a creado correctamemte!!!</p> <br>";
-            echo "<a href='../vista/login.html'>Proceder a LOGEO</a>";       
+            header( "Location: ../vista/login.html"       );
         } else { 
             if($conn->errno == 1062){ 
                 echo "<p class='error'>La persona con la cedula cedula ya esta registrada en el sistema </p>";      
