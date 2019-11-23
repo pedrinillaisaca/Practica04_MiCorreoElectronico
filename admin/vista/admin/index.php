@@ -14,12 +14,9 @@
 <body> 
 
 <?php 
-
+//variables de usuarios
 $u_codigo=$_GET["u_codigo"];
 $u_nombre=$_GET["u_nombre"];
-
-//echo"<p>".$u_codigo."</p>";
-
 
  echo "<h1>Administrador: ".$u_nombre."</h1>";
  //envio a cada pagina su respectivo id de usuario para realizar los cambios pertinentes

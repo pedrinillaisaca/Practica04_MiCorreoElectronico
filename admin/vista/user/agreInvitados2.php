@@ -16,9 +16,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
 
 <body>
     <h1>Seleciona los invitados</h1>
-
-
-    <h2><a href="crearReunion.php">Regresar</a></h2>
+   
     <table style="width:100%" class="tabla">
         <tr>
 
@@ -30,6 +28,12 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
 
         </tr>
         <?php
+
+        //ENVIANDO LAS VARIABLES DE LOS USUARIOS
+        $u_codigo=$_GET["u_codigo"];
+        $u_nombre=$_GET["u_nombre"];
+
+        echo"<h2><a href='index.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Regresar</a></h2>";
         //AQUI ESTOY ENVIANDO AL UUSARIO 
         //$codigo_reunion=$_GET["r_codigo"];
         include '../../../config/conexionDB.php';
@@ -74,6 +78,8 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
         $conn->close();
         ?>
     </table>
+
+    
 
 </body>
 

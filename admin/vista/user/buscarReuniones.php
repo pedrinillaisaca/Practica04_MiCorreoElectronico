@@ -13,7 +13,14 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
     <link rel="stylesheet" href="../../../css/formulario.css">
     <script src="main.js" type="text/javascript"></script>
 </head>
-<?php $u_codigo=$_GET["u_codigo"]; echo "<p>".$u_codigo."</p>";  ?>
+<?php 
+$u_codigo=$_GET["u_codigo"];
+$u_nombre=$_GET["u_nombre"]; 
+//echo "<p>".$u_codigo."</p>";
+//echo "<p>".$u_nombre."</p>";  
+echo "<h2><a href='../../vista/user/index.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Regresar</a></h2>";
+
+?>
 
 
 <section class="formulas">
@@ -42,12 +49,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
         </div>
 
     </form>
-    <div id="informacion"><b>Datos </b></div> 
- 
-
-
-    <h2><a href="../../vista/user/index.php">Regresar</a></h2>
-    <h2><a href="agreInvitados.php">Agregar Invitados</a></h2>
+    <div id="informacion"><b>Datos </b></div>          
 
 </section>
 

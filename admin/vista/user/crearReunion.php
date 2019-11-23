@@ -12,7 +12,12 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
     <title>Crear Reunion</title>
     <link rel="stylesheet" href="../../../css/formulario.css">
 </head>
-<?php $u_codigo=$_GET["u_codigo"]; echo "<p>".$u_codigo."</p>";  ?>
+<?php 
+$u_codigo=$_GET["u_codigo"];
+$u_nombre=$_GET["u_nombre"];
+//echo "<p>".$u_codigo."</p>";//solo para comprobar que las variables llegando bien  
+//echo "<p>".$u_nombre."</p>";//  
+?>
 
 <section class="formulas">
     <h2>Crear Reunion</h2>
@@ -21,7 +26,8 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
 
 
     
-    <input type="hidden" id="codigo" name="codigo" value="<?php echo $_GET["u_codigo"];?>" />
+    <input type="hidden" id="u_codigo" name="u_codigo" value="<?php echo $_GET["u_codigo"];?>" />
+    <input type="hidden" id="u_nombre" name="u_nombre" value="<?php echo $_GET["u_nombre"];?>" />
 
         <div><label for="fecha">Fecha:</label>
             <input type="text" id="fecha" name="fecha" placeholder="yyyy/mm/dd" />
@@ -72,8 +78,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
         </div>
 
     </form>
-    <h2><a href="../../vista/user/index.php">Regresar</a></h2>
-    <h2><a href="agreInvitados.php">Agregar Invitados</a></h2>
+    
 
 </section>
 
