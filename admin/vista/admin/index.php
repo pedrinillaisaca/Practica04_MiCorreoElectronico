@@ -63,7 +63,7 @@ $u_nombre=$_GET["u_nombre"];
                     echo "   <td>" . $row['r_coordenadas'] . "</td>"; 
                     echo "   <td>" . $row['r_motivo'] . "</td>"; 
 
-                    echo "   <td> <a href='borrarReunion.php?r_codigo=" . $row['r_codigo'] . "'>Eliminar Reunion</a> </td>";  
+                    echo "   <td> <a href='borrarReunion.php?r_codigo=".$row['r_codigo']."&u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Eliminar Reunion</a> </td>";  
                  
                     echo "</tr>"; 
                 } 

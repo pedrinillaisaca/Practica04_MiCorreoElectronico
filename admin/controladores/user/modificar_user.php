@@ -16,7 +16,8 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
     //incluir conexión a la base de datos 
     include '../../../config/conexionDB.php';
 
-    $codigo = $_POST["codigo"];
+    $u_codigo = $_POST["u_codigo"];
+    $u_nombre = $_POST["u_nombre"];
     //$cedula = isset($_POST["cedula"]) ? trim($_POST["cedula"]) : null;
     $nombres = isset($_POST["nombres"]) ? mb_strtoupper(trim($_POST["nombres"]), 'UTF-8') : null;
     $apellidos = isset($_POST["apellidos"]) ? mb_strtoupper(trim($_POST["apellidos"]), 'UTF-8') : null;
@@ -37,7 +38,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
         "u_correo = '$correo', " .
         "u_fecha_nacimiento = '$fechaNacimiento', " .
         "u_fecha_modificacion = '$fecha' " .
-        "WHERE u_codigo = $codigo";
+        "WHERE u_codigo = $u_codigo";
 
     if ($conn->query($sql) === TRUE) {
         echo "Se ha actualizado los datos personales correctamemte!!!<br>";
@@ -45,7 +46,7 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
     }
     echo "<p>Usuario Modificado</p>";
-    echo "<a href='../../vista/user/index.php'>Regresar</a>";
+    header ("Location: ../../vista/user/index.php?u_codigo=$u_codigo&u_nombre=$u_nombre");
 
     $conn->close();
 

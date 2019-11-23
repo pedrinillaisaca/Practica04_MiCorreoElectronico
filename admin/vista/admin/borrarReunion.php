@@ -13,9 +13,13 @@
 </head>
 
 <body>
-    <?php
-    echo"<h1>Borrar Reunion</h1>";
+    <?php    
     $r_codigo = $_GET["r_codigo"];
+    $u_codigo=$_GET["u_codigo"];
+    $u_nombre=$_GET["u_nombre"];
+    echo"<h1>Borrar Reunion</h1>";
+    echo"<h2><a href='index.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Regresar</a></h2>";
+
     //echo "".$r_codigo."";
     $sql = "SELECT * FROM reunion where r_codigo=$r_codigo";
 
@@ -30,6 +34,8 @@
             <form id="formulario01" method="POST" action="../../controladores/admin/eliminarReunion.php"> 
                 <div>
                     <input type="hidden" id="r_codigo" name="r_codigo" value="<?php echo $row["r_codigo"]; ?>" /><!--PILAS-->
+                    <input type="hidden" id="u_codigo" name="u_codigo" value="<?php echo $u_codigo; ?>" /><!--PILAS-->
+                    <input type="hidden" id="u_nombre" name="u_nombre" value="<?php echo $u_nombre; ?>" /><!--PILAS-->
                 </div>
                 <div>
                 <label for="r_fecha">Fecha</label>
@@ -62,7 +68,7 @@
                 </div>
             </form>
 
-    <?php
+    <?php 
         }
     } else {
         echo "<p>Ha ocurrido un error inesperado !</p>";

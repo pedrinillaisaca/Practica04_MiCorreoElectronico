@@ -25,8 +25,8 @@ $u_nombre=$_GET["u_nombre"];
  //envio a cada pagina su respectivo id de usuario para realizar los cambios pertinentes
  echo "<h2><a href='crearReunion.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Crear Reuniones</a></h2>";
  echo "<h2><a href='buscarReuniones.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Buscar Reuniones</a></h2>";
- echo "<h2><a href='modificar_user2.php?u_codigo=".$u_codigo."'>Modificar datos</a></h2>";
- echo "<h2><a href='cambiar_contra_usuario.php?u_codigo=".$u_codigo."'>Cambiar contraseña</a></h2>";
+ echo "<h2><a href='modificar_user2.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Modificar datos</a></h2>";
+ echo "<h2><a href='cambiar_contra_usuario.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Cambiar contraseña</a></h2>";
  echo "<h2><a href='../../controladores/cerrarSesion.php'>Cerrar Sesion</a></h2>";
  
  ?>

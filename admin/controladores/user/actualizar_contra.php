@@ -21,8 +21,10 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
 
     <?php
 
-    $codigo = $_GET["u_codigo"];
-    //echo"<p>puto code ".$codigo."</p>";
+    $u_codigo = $_GET["u_codigo"];//NO SE USARON ESTAS VARIABLES
+    $u_nombre= $_GET["u_nombre"];//NO SE USARON ESTAS VARIABLES
+    echo"<p>puto code ".$u_codigo."</p>";
+    echo"<p>puto nombre ".$u_nombre."</p>";
     include '../../../config/conexionDB.php';
     $contrasena = isset($_POST["new_contra"]) ? trim($_POST["new_contra"]) : null;
     $fecha = date('Y-m-d H:i:s', time());
@@ -30,11 +32,11 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
         //"SET usu_cedula = '$cedula', " .
         "SET u_password = MD5('$contrasena') ," .
         "u_fecha_modificacion = '$fecha' " .
-        "WHERE u_codigo = $codigo";
+        "WHERE u_codigo = $u_codigo";
 
     if ($conn->query($sql) === TRUE) {
         echo "Se ha actualizado los datos personales correctamemte!!!<br>";
-        header("location: ../../../public/vista/login.html");//una vez actualizados los datos se redurecciona a login 
+        header("Location: ../../../public/vista/login.html");//una vez actualizados los datos se redurecciona a login 
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
     }

@@ -19,8 +19,9 @@
 <h2><a href="index.php">Regresar</a></h2>
     <?php
 
-    $codigo = $_GET["u_codigo"];
-    $sql = "SELECT * FROM usuario WHERE u_codigo=$codigo AND u_rol='U'";
+    $u_codigo = $_GET["u_codigo"];
+    $u_nombre = $_GET["u_nombre"];
+    $sql = "SELECT * FROM usuario WHERE u_codigo=$u_codigo AND u_rol='U'";
 
     include '../../../config/conexionDB.php';
     $result = $conn->query($sql);
@@ -31,7 +32,8 @@
             ?>
 
             <form id="formulario01" method="POST" action="../../controladores/user/modificar_user.php">
-                <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
+                <input type="hidden" id="u_codigo" name="u_codigo" value="<?php echo $u_codigo ?>" />
+                <input type="hidden" id="u_nombre" name="u_nombre" value="<?php echo $u_nombre ?>" />
 
 
 

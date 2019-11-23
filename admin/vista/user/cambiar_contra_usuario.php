@@ -15,12 +15,18 @@ if (!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE) {
 </head>
 
 <body>
+<h1>Modificar Contraseña</h1>
+<?php 
+$u_codigo=$_GET["u_codigo"];
+$u_nombre=$_GET["u_nombre"];
+//echo"<p>".$u_codigo ."</p>";
 
-<?php $u_codigo=$_GET["u_codigo"]; echo"<p>".$u_codigo ."</p>";?>
-    <h1>Modificar Contraseña</h1>
+echo "<h2><a href='index.php?u_codigo=".$u_codigo."&u_nombre=".$u_nombre."'>Regresar</a></h2>";
+?>
+    
 
-    <h2><a href="index.php">Regresar</a></h2>
-<form  method="POST" action="../../controladores/user/actualizar_contra.php?u_codigo=<?php $u_codigo=$_GET["u_codigo"]; echo($u_codigo)?>">
+    
+<form  method="POST" action="../../controladores/user/actualizar_contra.php?u_codigo=<?php $u_codigo=$_GET["u_codigo"]; echo($u_codigo)?>&u_nombre=<?php $u_nombre=$_GET["u_nombre"]; echo($u_nombre)?>">
 
 
         <div>
